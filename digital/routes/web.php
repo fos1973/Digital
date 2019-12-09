@@ -11,6 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Auth::routes();
+
+Route::get('/', 'ActorController@index');
+Route::get('/actor/{id}', 'ActorController@show');
+Route::get('/peliculas', 'PeliculasController@index');
+Route::get('/peliculas/detalle/{id}', 'PeliculasController@detalle');
+Route::get('/peliculas/titulos', 'PeliculasController@titulos');
+
+
+
+Route::get('/home', 'HomeController@index')->name('home');
