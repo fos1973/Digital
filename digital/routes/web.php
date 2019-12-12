@@ -17,8 +17,8 @@ Route::get('/', 'ActorController@index');
 Route::get('/actor/{id}', 'ActorController@show');
 Route::get('/peliculas', 'PeliculasController@index');
 Route::get('/peliculas/detalle/{id}', 'PeliculasController@detalle');
+
 Route::get('/peliculas/titulos', 'PeliculasController@titulos');
-
-
-
+Route::get('/peliculas/nueva', 'PeliculasController@create');
+Route::post('/peliculas/nueva', 'PeliculasController@insert');
 Route::get('/home', 'HomeController@index')->name('home');

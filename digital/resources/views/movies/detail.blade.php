@@ -20,6 +20,19 @@
         @endforeach
       </ul>
     </li>
+    <li>
+      <a href="/peliculas/modificar/{{$movie->id}}" class="btn btn-outline-warning btn-block">
+        Modificar
+      </a>
+    </li>
+    <li>
+      <form method="post" action="/peliculas/eliminar">
+        @csrf
+        {{ method_field('delete') }}
+        <input type="hidden" name="id" value="{{$movie->id}}">
+        <button type="submit" class="btn btn-block btn-outline-danger">Elinimar</button>
+      </form>
+    </li>
   </ul>
 </section>
 @endsection

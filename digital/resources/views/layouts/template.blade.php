@@ -21,7 +21,7 @@
           <a class="nav-link" href="/peliculas/">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="/peliculas/titulos">Listado</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -35,24 +35,26 @@
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
+          <a class="nav-link" href="/api/peliculas/api">Api</a>
         </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <form class="form-inline my-2 my-lg-0" action=>
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="producto" >
         <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
       </form>
     </div>
   </nav>
 </header>
-    <main class="container">
-      <div class="row justify-content-around">
+    <main >
+      <div class="row d-flex ml-2">
             @yield('section')
             @yield('aside')
       </div>
     </main>
-
-
-
+    <footer>
+        <div class="text-light bg-primary p-2 mt-5 d-flex flex-row justify-content-end pr-4" >
+        Mis Peliculas
+        </div>
+    </footer>
   </body>
 </html>
