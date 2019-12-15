@@ -14,6 +14,6 @@ class ActorController extends Controller
 
     function show($id){
       $actor = Actor::find($id);
-      return view('actors.detail',['actor'=>$actor]);
+      return view('actors.detail',compact('actor'));
     }
 }

@@ -18,7 +18,7 @@
       <ul class="list-group active">
         @foreach ($movie->actors as $actor)
             <li class="list-group-item">
-              <a href="/actor/{{$actor->id}}">{{$actor->first_name}} {{$actor->last_name}}</a>
+              <a href="/actor/detalle/{{$actor->id}}">{{$actor->first_name}} {{$actor->last_name}}</a>
             </li>
         @endforeach
       </ul>

@@ -28,3 +28,5 @@ Route::get('/peliculas/modificar/{id}','PeliculasController@modificar')->middlew
 Route::post('/peliculas/actualizar/{id}','PeliculasController@actualizar')->middleware('auth');
 
 Route::get('peliculas/buscar/','PeliculasController@buscar');
+
+Route::get('actor/detalle/{id}','ActorController@show');
