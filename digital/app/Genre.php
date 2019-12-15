@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Genre extends Model
 {
-    public $garded = [];
+    public $guarded = [];
 
     public function movies(){
       return $this->hasMany(Movie::class,'genre_id');

@@ -11,6 +11,9 @@
     @if ($movie->genre)
       <li class="list-group-item">Genero: {{$movie->genre->name}}</li>
     @endif
+    @if ($movie->revenue)
+      <li class="list-group-item">Recaudacion: {{$movie->revenue}}</li>
+    @endif
     <li class="list-group-item">
       <ul class="list-group active">
         @foreach ($movie->actors as $actor)
@@ -20,6 +23,7 @@
         @endforeach
       </ul>
     </li>
+    @if ($usuario)
     <li>
       <a href="/peliculas/modificar/{{$movie->id}}" class="btn btn-outline-warning btn-block">
         Modificar
@@ -28,11 +32,11 @@
     <li>
       <form method="post" action="/peliculas/eliminar">
         @csrf
-        {{ method_field('delete') }}
         <input type="hidden" name="id" value="{{$movie->id}}">
-        <button type="submit" class="btn btn-block btn-outline-danger">Elinimar</button>
+        <button type="submit" class="btn btn-block btn-outline-danger">Eliminar</button>
       </form>
     </li>
+  @endif
   </ul>
 </section>
 @endsection

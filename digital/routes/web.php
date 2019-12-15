@@ -13,12 +13,18 @@
 
 Auth::routes();
 
-Route::get('/', 'ActorController@index');
-Route::get('/actor/{id}', 'ActorController@show');
+Route::get('/', 'PeliculasController@index');
 Route::get('/peliculas', 'PeliculasController@index');
 Route::get('/peliculas/detalle/{id}', 'PeliculasController@detalle');
 
 Route::get('/peliculas/titulos', 'PeliculasController@titulos');
-Route::get('/peliculas/nueva', 'PeliculasController@create');
-Route::post('/peliculas/nueva', 'PeliculasController@insert');
+Route::get('/peliculas/nueva', 'PeliculasController@create')->middleware('auth');
+Route::post('/peliculas/nueva', 'PeliculasController@insert')->middleware('auth');
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('/peliculas/eliminar','PeliculasController@eliminar')->middleware('auth');
+
+Route::get('/peliculas/modificar/{id}','PeliculasController@modificar')->middleware('auth');
+Route::post('/peliculas/actualizar/{id}','PeliculasController@actualizar')->middleware('auth');
+
+Route::get('peliculas/buscar/','PeliculasController@buscar');

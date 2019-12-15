@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Season extends Model
 {
-      public $garded = [];
+      public $guarded = [];
 
       public function series(){
         return $this->belongsTo(Serie::class,'serie_id');

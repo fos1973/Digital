@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Episode extends Model
 {
-      public $garded = [];
+      public $guarded = [];
 
 
       public function season(){

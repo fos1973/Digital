@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Serie extends Model
 {
-      public $garded = [];
+      public $guarded = [];
 
       public function genre(){
         return $this->belongsTo(Genre::class,'genre_id');

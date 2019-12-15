@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Movie extends Model
 {
-  public $garded = [];
+  public $guarded = [];
 
   public function actors(){
     return $this->belongsToMany(Actor::class,'actor_movie','movie_id','actor_id');
