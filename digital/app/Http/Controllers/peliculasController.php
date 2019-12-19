@@ -92,14 +92,17 @@ class PeliculasController extends Controller
     }
 
     function eliminar(Request $req){
-      $usuarioLog = Auth::user();
+      // $usuarioLog = Auth::user();
       $id = $req["id"];
+      $pelicula = Movie::find($id);
+      $pelicula->delete();
+      return redirect('/peliculas');
 
-    Actor::where('favorite_movie_id','=',$req->$id)->update(["favorite_movie_id" => null]);
+    // Actor::where('favorite_movie_id','=',$req->$id)->update(["favorite_movie_id" => null]);
 
 
 
-      dd(Actor::where('favorite_movie_id','=',$req->$id)->get());
+    //  dd(Actor::where('favorite_movie_id','=',$req->$id)->get());
           //
         // Movie::find($id)->actors()->detach();
         //

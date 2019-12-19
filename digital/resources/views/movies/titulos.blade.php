@@ -9,6 +9,10 @@
         <li class="list-group-item justify-content-center">
           {{$titulos->links()}}
         </li>
+        <li class="list-group-item justify-content-center btn ">
+          <a href="/peliculas/nueva/">Nueva</a>
+
+        </li>
 
 @endsection
 

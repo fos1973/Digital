@@ -30,10 +30,10 @@
       </a>
     </li>
     <li>
-      <form method="post" action="/peliculas/eliminar">
-        @csrf
+      <form method="post" action="/peliculas/eliminar/">
+        {{csrf_field()}}
         <input type="hidden" name="id" value="{{$movie->id}}">
-        <button type="submit" class="btn btn-block btn-outline-danger">Eliminar</button>
+        <input type="submit" value="Eliminar" class="btn btn-block btn-outline-danger">
       </form>
     </li>
   @endif

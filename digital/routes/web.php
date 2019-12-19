@@ -22,7 +22,7 @@ Route::get('/peliculas/nueva', 'PeliculasController@create')->middleware('auth')
 Route::post('/peliculas/nueva', 'PeliculasController@insert')->middleware('auth');
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::post('/peliculas/eliminar','PeliculasController@eliminar')->middleware('auth');
+Route::post('/peliculas/eliminar/','PeliculasController@eliminar')->middleware('auth');
 
 Route::get('/peliculas/modificar/{id}','PeliculasController@modificar')->middleware('auth');
 Route::post('/peliculas/actualizar/{id}','PeliculasController@actualizar')->middleware('auth');
@@ -30,3 +30,9 @@ Route::post('/peliculas/actualizar/{id}','PeliculasController@actualizar')->midd
 Route::get('peliculas/buscar/','PeliculasController@buscar');
 
 Route::get('actor/detalle/{id}','ActorController@show');
+
+//DESAFIO 2
+
+Route::get('javascript',function(){
+  return view('javascript');
+});
